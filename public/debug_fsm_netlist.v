@@ -1,10 +1,15 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
 module debug_fsm (
-    input wire clk, input wire rst_n, input wire soft_rst,
-    input wire diag_en, input wire [31:0] dbg_data,
-    input wire auth_check, input wire auth_ok,
-    input wire auth_fail, input wire pw_valid,
-    output wire dbg_bypass
+    input  wire        clk,
+    input  wire        rst_n,
+    input  wire        soft_rst,
+    input  wire        diag_en,
+    input  wire [31:0] dbg_data,
+    input  wire        auth_check,
+    input  wire        auth_ok,
+    input  wire        auth_fail,
+    input  wire        pw_valid,
+    output wire        dbg_bypass
 );
     wire w9631;
     wire w3861;
@@ -46,9 +51,9 @@ module debug_fsm (
     wire w7072;
     wire w7123;
     wire w7302;
-    reg q7449;
-    reg q6752;
-    reg q6637;
+    reg  q7449;
+    reg  q6752;
+    reg  q6637;
     assign w6964 = (w3796 & w3690);
     assign w7123 = (q6752 & w5308 & w7072 & diag_en);
     assign w3690 = (w6924 & w6742);
