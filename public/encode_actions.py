@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Convert public action words to clock-cycle stimulus. No private knowledge."""
+
+# Usage: python3 encode_actions.py --key <8-digit-hex-key> ACTION1 ACTION2 ...
+# Example: python3 encode_actions.py --key ABCD1234 START PROBE RESET PROBE
+# Actions: IDLE, START, PROBE, RESET, BADPW, GOODPW
+# Output: one line per clock cycle
+# Format: soft_rst auth_req diag_en pw_valid pw_hex dbg_data_hex
+# To save output: python3 encode_actions.py --key ABCD1234 START PROBE RESET PROBE > trial.txt
+
 import argparse
 
 DEMO_PASSWORD = 0xC0DECAFE
